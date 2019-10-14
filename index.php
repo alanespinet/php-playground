@@ -18,5 +18,5 @@ $options = array(
 $context = stream_context_create( $options );
 $response = file_get_contents( $url, false, $context );
 
-// echo $response;
-echo json_encode( $data );
+echo $response;
+// echo json_encode( $data );
