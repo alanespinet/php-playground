@@ -4,12 +4,12 @@ header("Access-Control-Allow-Origin: *");
 $url = 'https://www.google.com/recaptcha/api/siteverify';
 $data = array(
   'secret' => '6LdDiL0UAAAAAGtvR0k5QvtBBvnwqME3_JKfUvk4',
-  'token' => $_POST['token']
+  'response' => $_POST['token']
 );
 
 $options = array(
   'http' => array(
-    'header' => "Content-type: application/x-www-form-urlencoded",
+    'header' => "Content-type: application/x-www-form-urlencoded\r\n",
     'method' => 'POST',
     'content' => http_build_query( $data )
   )
