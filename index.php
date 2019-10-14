@@ -9,13 +9,13 @@ $data = array(
 
 $options = array(
   'http' => array(
-    'header' => 'Content-type: application/x-www-form-urlencoded\r\n',
+    'header' => "Content-type: application/x-www-form-urlencoded\r\n",
     'method' => 'POST',
     'content' => http_build_query( $data )
   )
 );
 
 $context = stream_context_create( $options );
-$response = get_file_contents( $url, false, $context );
+$response = file_get_contents( $url, false, $context );
 
 echo json_encode( $response );
